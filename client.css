@@ -1022,7 +1022,7 @@ nav .active{
 
 }
 
-body{
+.body{
     margin: 0;
     padding: 12px; /* épaisseur du cadre */
     background: #12734A;
