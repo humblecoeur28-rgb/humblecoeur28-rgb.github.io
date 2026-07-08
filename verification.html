@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validation</title>
+
+<link rel="stylesheet" href="verification.css">
+</head>
+
+<body>
+
+<div class="validation">
+
+    <div class="card">
+
+        <div class="check">
+            ✓
+        </div>
+
+        <h1>Connexion validée</h1>
+
+        <p>
+            Votre authentification a été vérifiée avec succès.
+        </p>
+
+        <p class="small">
+            Vous allez être redirigé automatiquement...
+        </p>
+
+        <div class="loader"></div>
+
+        <button onclick="window.location.href='client.html'">
+            Continuer
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+    // Redirection automatique après 3 secondes
+    setTimeout(function () {
+        window.location.href = "client.html";
+    }, 3000);
+</script>
+
+</body>
+</html>

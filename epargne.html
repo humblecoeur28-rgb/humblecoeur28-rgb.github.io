@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compte Épargne</title>
+
+<link rel="stylesheet" href="epargne.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="green-bg">
+
+    <header>
+
+        <button class="back" onclick="history.back()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <h2>Compte Épargne</h2>
+
+    </header>
+
+    <div class="card">
+
+        <p class="label">Solde du compte</p>
+
+        <div style="display:flex;align-items:center;gap:10px;">
+            <h1 id="solde">80 287,00 €</h1>
+
+            <button onclick="toggleSolde()"
+            style="border:none;background:none;color:white;font-size:22px;cursor:pointer;">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:10px;">
+            <p class="iban" id="numero">
+                IBAN= ** ************
+            </p>
+
+            <button onclick="toggleNumero()"
+            style="border:none;background:none;color:white;font-size:20px;cursor:pointer;">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <div class="status">
+
+        <i class="fa-solid fa-lock"></i>
+
+        <div>
+            <h3>Compte bloqué</h3>
+            <p>Succession en cours...</p>
+        </div>
+
+    </div>
+
+    <h3>Informations</h3>
+
+    <div class="infos">
+
+        <div class="ligne">
+            <span>Statut</span>
+            <strong>Bloqué</strong>
+        </div>
+
+        <div class="ligne">
+            <span>Motif</span>
+            <strong>Succession</strong>
+        </div>
+
+        <div class="ligne">
+            <span>Accès aux fonds</span>
+            <strong>Indisponible</strong>
+        </div>
+
+        <div class="ligne">
+            <span>Date</span>
+            <strong>23/03/2026</strong>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <button disabled>
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            Virement indisponible
+        </button>
+
+        <button disabled>
+            <i class="fa-solid fa-money-bill-transfer"></i>
+            Retrait indisponible
+        </button>
+
+        <button>
+            <i class="fa-solid fa-phone"></i>
+            Contacter votre conseiller
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+let soldeVisible = true;
+let numeroVisible = false;
+
+function toggleSolde() {
+    const solde = document.getElementById("solde");
+
+    if (soldeVisible) {
+        solde.textContent = "••••••••";
+    } else {
+        solde.textContent = "80 287,00 €";
+    }
+
+    soldeVisible = !soldeVisible;
+}
+
+function toggleNumero() {
+    const numero = document.getElementById("numero");
+
+    if (numeroVisible) {
+        numero.textContent = "IBAN = ** ************";
+    } else {
+        numero.textContent = "IBAN = FR76428750189042";
+    }
+
+    numeroVisible = !numeroVisible;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compte de chèques</title>
+
+<link rel="stylesheet" href="compte.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <button class="back" onclick="history.back()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <h2>Compte de chèques</h2>
+    </header>
+
+    <div class="card">
+
+        <p class="label">Solde du compte</p>
+
+        <div style="display:flex;align-items:center;gap:10px;">
+            <h1 id="solde">245 870,00 €</h1>
+
+            <button onclick="toggleSolde()"
+                style="border:none;background:none;color:white;font-size:22px;cursor:pointer;">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:10px;">
+            <p class="iban" id="numero">
+                IBAN = ** **
+            </p>
+
+            <button onclick="toggleNumero()"
+                style="border:none;background:none;color:white;font-size:20px;cursor:pointer;">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <h3>Dernières opérations</h3>
+
+    <div class="operations">
+
+        <div class="operation">
+            <div>
+                <strong>Salaire</strong><br>
+                <small>22/03/2026</small>
+            </div>
+
+            <span class="plus">+2 100,00 €</span>
+        </div>
+
+        <div class="operation">
+            <div>
+                <strong>Paiement CB Carrefour</strong><br>
+                <small>21/03/2026</small>
+            </div>
+
+            <span class="moins">-54,80 €</span>
+        </div>
+
+        <div class="operation">
+            <div>
+                <strong>Prélèvement EDF</strong><br>
+                <small>20/03/2026</small>
+            </div>
+
+            <span class="moins">-87,40 €</span>
+        </div>
+
+        <div class="operation">
+            <div>
+                <strong>Retrait DAB</strong><br>
+                <small>18/03/2026</small>
+            </div>
+
+            <span class="moins">-100,00 €</span>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <button>
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            Faire un virement
+        </button>
+
+        <button>
+            <i class="fa-solid fa-file-lines"></i>
+            Télécharger le RIB
+        </button>
+
+        <button>
+            <i class="fa-solid fa-file-pdf"></i>
+            Relevés de compte
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+let soldeVisible = true;
+let numeroVisible = false;
+
+function toggleSolde() {
+    const solde = document.getElementById("solde");
+
+    if (soldeVisible) {
+        solde.textContent = "••••••••";
+    } else {
+        solde.textContent = "245 870,00 €";
+    }
+
+    soldeVisible = !soldeVisible;
+}
+
+function toggleNumero() {
+    const numero = document.getElementById("numero");
+
+    if (numeroVisible) {
+        numero.textContent = "IBAN = ** ******";
+    } else {
+        numero.textContent = "IBAN = FR1234 5678 9012";
+    }
+
+    numeroVisible = !numeroVisible;
+}
+</script>
+
+</body>
+</html>

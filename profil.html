@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mon Profil</title>
+
+<link rel="stylesheet" href="profil.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+
+<!-- HEADER -->
+
+<header>
+
+
+<button onclick="retour()">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</button>
+
+
+<h1>Mon profil</h1>
+
+
+</header>
+
+
+
+
+
+
+
+<main>
+
+
+
+
+<!-- PROFIL -->
+
+<section class="profile-top">
+
+
+<img src="image.jpg"
+class="big-photo"
+alt="Photo profil">
+
+
+
+<h2>Kevine</h2>
+
+
+<p>Client bancaire</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- INFORMATIONS -->
+
+
+<section class="menu-card">
+
+
+
+<div class="menu-item">
+
+<i class="fa-solid fa-user"></i>
+
+
+<div>
+
+<h3>Informations personnelles</h3>
+
+<p>Nom, téléphone, adresse</p>
+
+</div>
+
+
+<i class="fa-solid fa-chevron-right"></i>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="menu-item">
+
+<i class="fa-solid fa-lock"></i>
+
+
+<div>
+
+<h3>Sécurité</h3>
+
+<p>Mot de passe et connexion</p>
+
+</div>
+
+
+<i class="fa-solid fa-chevron-right"></i>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="menu-item">
+
+<i class="fa-solid fa-gear"></i>
+
+
+<div>
+
+<h3>Paramètres</h3>
+
+<p>Préférences de l'application</p>
+
+</div>
+
+
+<i class="fa-solid fa-chevron-right"></i>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="menu-item">
+
+<i class="fa-solid fa-file-lines"></i>
+
+
+<div>
+
+<h3>Documents</h3>
+
+<p>RIB et relevés</p>
+
+</div>
+
+
+<i class="fa-solid fa-chevron-right"></i>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<button class="logout-btn" onclick="deconnexion()">
+
+<i class="fa-solid fa-power-off"></i>
+
+Déconnexion
+
+</button>
+
+
+
+
+
+</main>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function retour(){
+
+window.location.href="client.html";
+
+}
+
+
+
+function deconnexion(){
+
+window.location.href="index.html";
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>

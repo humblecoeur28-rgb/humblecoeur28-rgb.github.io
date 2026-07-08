@@ -1,0 +1,343 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Découvrir</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f6fa;
+    padding-bottom:80px;
+}
+
+
+/* En-tête */
+
+.header{
+    background:#0b1f3a;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+
+/* Publicité */
+
+.banner{
+    margin:15px;
+    height:220px;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+}
+
+
+.banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    position:absolute;
+    opacity:0;
+    transition:1s;
+}
+
+
+.banner img.active{
+    opacity:1;
+}
+
+
+/* contenu */
+
+.container{
+    padding:15px;
+}
+
+
+.title{
+    margin:20px 0 10px;
+    font-size:20px;
+}
+
+
+/* Cartes */
+
+.card{
+
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:15px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+}
+
+
+.card i{
+
+    font-size:30px;
+    color:#0b1f3a;
+
+}
+
+
+.card h3{
+    margin-bottom:5px;
+}
+
+
+.card p{
+    color:#777;
+}
+
+
+
+/* Offre */
+
+.offer{
+
+    background:#0b1f3a;
+    color:white;
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:15px;
+
+}
+
+
+.offer button{
+
+    margin-top:15px;
+    padding:12px 20px;
+    border:none;
+    border-radius:20px;
+    background:white;
+
+}
+
+
+/* Barre du bas */
+
+.navbar{
+
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background:white;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    box-shadow:0 -3px 10px #ddd;
+
+}
+
+
+.navbar button{
+
+    border:none;
+    background:none;
+    font-size:12px;
+
+}
+
+
+.navbar i{
+
+    display:block;
+    font-size:23px;
+    margin-bottom:5px;
+
+}
+
+
+.active{
+
+    color:#0b1f3a;
+    font-weight:bold;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="header">
+<h2>Découvrir</h2>
+<p>Découvrez nos services et nouveautés</p>
+</div>
+
+
+
+<div class="banner">
+
+<img class="active" src="pub1.jpg">
+
+<img src="pub2.jpg">
+
+<img src="pub3.jpg">
+
+</div>
+
+
+
+
+<div class="container">
+
+
+<h2 class="title">Services populaires</h2>
+
+
+<div class="card">
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+<div>
+<h3>Transfert d'argent</h3>
+<p>Envoyez de l'argent rapidement.</p>
+</div>
+
+</div>
+
+
+
+<div class="card">
+<i class="fa-solid fa-credit-card"></i>
+
+<div>
+<h3>Carte bancaire</h3>
+<p>Gérez vos paiements facilement.</p>
+</div>
+
+</div>
+
+
+
+
+<h2 class="title">Offres du moment</h2>
+
+
+<div class="offer">
+
+<h3>🎁 Nouvelle offre disponible</h3>
+
+<p>
+Profitez des avantages exclusifs de votre compte.
+</p>
+
+<button>
+Découvrir
+</button>
+
+</div>
+
+
+
+
+<h2 class="title">Actualités</h2>
+
+
+<div class="card">
+
+<i class="fa-solid fa-bell"></i>
+
+<div>
+<h3>Nouvelles fonctionnalités</h3>
+<p>Votre application évolue chaque jour.</p>
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="navbar">
+
+
+<button>
+<i class="fa-solid fa-house"></i>
+Accueil
+</button>
+
+
+<button>
+<i class="fa-solid fa-credit-card"></i>
+Paiements
+</button>
+
+
+<button class="active">
+<i class="fa-solid fa-compass"></i>
+Découvrir
+</button>
+
+
+<button>
+<i class="fa-solid fa-phone"></i>
+Contact
+</button>
+
+
+</div>
+
+
+
+
+<script>
+
+
+let images=document.querySelectorAll(".banner img");
+
+let index=0;
+
+
+setInterval(()=>{
+
+images[index].classList.remove("active");
+
+index++;
+
+if(index>=images.length){
+
+index=0;
+
+}
+
+images[index].classList.add("active");
+
+
+},4000);
+
+
+
+</script>
+
+
+</body>
+</html>
+```

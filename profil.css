@@ -1,0 +1,364 @@
+/* ===============================
+   RESET
+================================ */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',Arial,sans-serif;
+
+}
+
+
+body{
+
+    background:#F4F6F8;
+
+    color:#222;
+
+}
+
+
+
+
+
+/* ===============================
+   APPLICATION
+================================ */
+
+
+.app{
+
+    width:100%;
+
+    max-width:430px;
+
+    min-height:100vh;
+
+    margin:auto;
+
+    background:#F4F6F8;
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   HEADER
+================================ */
+
+
+header{
+
+
+    background:linear-gradient(180deg,#12B66A,#0B9E62);
+
+    color:white;
+
+    padding:35px 22px 45px;
+
+    border-bottom-left-radius:35px;
+
+    border-bottom-right-radius:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+
+header button{
+
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:white;
+
+    color:#0B9E62;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+
+
+
+header h1{
+
+    font-size:28px;
+
+    color:white;
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   PROFIL PRINCIPAL
+================================ */
+
+
+.profile-top{
+
+
+    margin-top:30px;
+
+    text-align:center;
+
+    padding:0 22px;
+
+}
+
+
+
+.big-photo{
+
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid white;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+}
+
+
+
+.profile-top h2{
+
+
+    margin-top:15px;
+
+    font-size:26px;
+
+}
+
+
+
+.profile-top p{
+
+
+    color:#0B9E62;
+
+    font-weight:600;
+
+    margin-top:5px;
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   MENU PROFIL
+================================ */
+
+
+.menu-card{
+
+
+    background:white;
+
+    margin:30px 22px;
+
+    border-radius:25px;
+
+    padding:10px;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.05);
+
+}
+
+
+
+
+
+.menu-item{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:18px 12px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+
+.menu-item:last-child{
+
+    border-bottom:none;
+
+}
+
+
+
+
+
+.menu-item > i:first-child{
+
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:14px;
+
+    background:#EAF8F1;
+
+    color:#0B9E62;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+
+
+.menu-item div{
+
+
+    flex:1;
+
+}
+
+
+
+.menu-item h3{
+
+
+    font-size:16px;
+
+    margin-bottom:5px;
+
+}
+
+
+
+.menu-item p{
+
+
+    font-size:13px;
+
+    color:#888;
+
+}
+
+
+
+.menu-item > i:last-child{
+
+
+    color:#999;
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   BOUTON DECONNEXION
+================================ */
+
+
+.logout-btn{
+
+
+    margin:0 22px 30px;
+
+    width:calc(100% - 44px);
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#E53935;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+.logout-btn:hover{
+
+    opacity:.9;
+
+}
+
+body{
+    margin: 0;
+    padding: 12px; /* épaisseur du cadre */
+    background: #12734A;
+}
+
+.container{
+    background: #fff;
+    min-height: calc(100vh - 24px);
+    border-radius: 25px;
+    overflow: hidden;
+}

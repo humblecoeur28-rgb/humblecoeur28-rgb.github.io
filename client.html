@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Accueil Banque</title>
+
+    <link rel="stylesheet" href="client.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+
+<body>
+
+<div class="forgot-page">
+
+<div class="app">
+
+
+    <!-- HEADER -->
+
+    <header>
+
+
+        <div class="header-top">
+
+
+            <h1>Accueil</h1>
+
+
+
+            <div class="header-icons">
+
+
+                <div class="notif" onclick="ouvrirNotifications()">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span>7</span>
+
+                </div>
+
+
+
+
+                <button onclick="ouvrirLogout()">
+                    <i class="fa-solid fa-power-off"></i>
+                </button>
+
+
+
+            </div>
+
+
+        </div>
+        <!-- PROFIL UTILISATEUR -->
+
+<div class="profil-card">
+
+
+    <img src="image.jpg" 
+         alt="Photo profil"
+         class="profil-image">
+
+
+
+    <div class="profil-info">
+
+
+        <h3>Richard Leblond</h3>
+
+        <p>Client bancaire</p>
+
+
+    </div>
+
+
+
+    <button onclick="window.location.href='profil.html'">
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+    </button>
+
+
+</div>
+
+
+        <div class="welcome">
+
+            <p>Bonjour, Richard 👋</p>
+
+            <span>Ravi de vous revoir</span>
+
+        </div>
+
+
+    </header>
+
+
+
+
+
+
+    <!-- CONTENU -->
+
+    <main>
+
+
+
+        <section class="title-row">
+
+
+            <h2>Comptes, assurances</h2>
+
+
+            <a href="#">
+
+                Tout voir
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </a>
+
+
+        </section>
+
+
+
+
+
+        <!-- COMPTES -->
+
+
+        <div class="cards">
+
+
+
+            <div class="card" onclick="window.location.href='compte.html'">
+
+
+                <div class="card-header">
+
+
+                    <div>
+
+                        <h3>Compte de chèques</h3>
+
+                        <p>N° ******</p>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-wallet"></i>
+
+
+                </div>
+
+
+
+                <div class="date">
+
+                    23/03/2026
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="card" onclick="window.location.href='epargne.html'">
+
+
+                <div class="card-header">
+
+
+                    <div>
+
+                        <h3>Compte épargne</h3>
+
+                        <p>N° ******</p>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-piggy-bank"></i>
+
+
+                </div>
+
+
+
+                <div class="date">
+
+                    23/03/2026
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- ACTIONS RAPIDES -->
+
+
+        <section class="actions">
+
+
+            <button onclick="virement()">
+
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+                <span>
+                    Réaliser un virement
+                </span>
+
+            </button>
+
+
+
+
+
+            <button onclick="wero()">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                <span>
+                    Envoyer avec Wero
+                </span>
+
+            </button>
+
+
+
+
+
+            <button onclick="rib()">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span>
+                    Afficher un RIB
+                </span>
+
+            </button>
+
+
+
+
+
+            <button onclick="plafonds()">
+
+                <i class="fa-solid fa-credit-card"></i>
+
+                <span>
+                    Gérer les plafonds
+                </span>
+
+            </button>
+
+
+
+        </section>
+
+
+
+
+
+
+
+        <!-- SYNTHESE -->
+
+
+        <section class="synthese">
+
+
+            <h2>
+                Synthèse des comptes
+            </h2>
+
+
+
+            <div class="synthese-card">
+
+
+                <i class="fa-solid fa-chart-column"></i>
+
+
+                <span>
+                    Total de vos comptes
+                </span>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+    <!-- NAVIGATION -->
+
+
+    <nav>
+
+
+        <button class="active">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>Accueil</span>
+
+        </button>
+
+
+
+        <button onclick="ouvrirPaiement()">
+
+          <i class="fa-solid fa-credit-card"></i>
+
+          <span>Paiements</span>
+
+        </button>
+
+
+
+        <button onclick="ouvrirDecouvrir()">
+             <i class="fa-solid fa-compass"></i>
+             <span>Découvrir</span>
+        </button>
+
+        <button onclick="ouvrirContact()">
+          <i class="fa-solid fa-comments"></i>
+          <span>Contact</span>
+        </button>
+
+
+    </nav>
+
+
+
+</div>
+
+<!-- POPUP NOTIFICATIONS -->
+
+<div id="notifModal" class="modal">
+
+
+    <div class="notif-box">
+
+
+        <div class="notif-title">
+
+            <h2>Notifications</h2>
+
+            <button onclick="fermerNotifications()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+
+        <div class="notification-item">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <div>
+                <h3>Connexion réussie</h3>
+                <p>Aujourd'hui à 18:25</p>
+            </div>
+
+        </div>
+
+
+
+        <div class="notification-item">
+
+            <i class="fa-solid fa-credit-card"></i>
+
+            <div>
+                <h3>Paiement par carte</h3>
+                <p>Paiement de 25,00 € effectué</p>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="notification-item">
+
+            <i class="fa-solid fa-money-bill-transfer"></i>
+
+            <div>
+                <h3>Virement reçu</h3>
+                <p>Vous avez reçu 500,00 €</p>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="notification-item">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <div>
+                <h3>Solde du compte</h3>
+                <p>Votre solde est à surveiller</p>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="notification-item">
+
+            <i class="fa-solid fa-file"></i>
+
+            <div>
+                <h3>Nouveau relevé</h3>
+                <p>Votre relevé est disponible</p>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="notification-item">
+
+            <i class="fa-solid fa-shield"></i>
+
+            <div>
+                <h3>Sécurité</h3>
+                <p>Vérifiez vos informations</p>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="notification-item">
+
+            <i class="fa-solid fa-gift"></i>
+
+            <div>
+                <h3>Nouvelle offre</h3>
+                <p>Découvrez nos services</p>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<!-- =========================
+     POPUP DECONNEXION
+========================= -->
+
+
+<div id="logoutModal" class="modal">
+
+
+    <div class="logout-box">
+
+
+        <img src="image.jpg"
+             alt="Photo profil"
+             class="profile-photo">
+
+
+
+        <h2>
+            Kevine
+        </h2>
+
+
+
+        <p>
+            Voulez-vous vraiment vous déconnecter ?
+        </p>
+
+
+
+        <div class="logout-buttons">
+
+
+            <button class="annuler" onclick="fermerLogout()">
+
+                Annuler
+
+            </button>
+
+
+
+            <button class="confirmer" onclick="confirmerLogout()">
+
+                Déconnexion
+
+            </button>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+<script src="client.js"></script>
+
+
+</body>
+
+</html>

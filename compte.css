@@ -1,0 +1,107 @@
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f6fa;
+}
+
+.container{
+    max-width:500px;
+    margin:auto;
+    padding:20px;
+}
+
+header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.back{
+    border:none;
+    background:none;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.card{
+    background:#0a5c3b;
+    color:white;
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:25px;
+}
+
+.label{
+    opacity:.8;
+}
+
+.card h1{
+    margin:10px 0;
+}
+
+.iban{
+    font-size:14px;
+}
+
+.operations{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.operation{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    border-bottom:1px solid #eee;
+}
+
+.operation:last-child{
+    border-bottom:none;
+}
+
+.plus{
+    color:green;
+    font-weight:bold;
+}
+
+.moins{
+    color:red;
+    font-weight:bold;
+}
+
+.buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:25px;
+}
+
+.buttons button{
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#0a5c3b;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.buttons button:hover{
+    background:#08492f;
+}
+
+body{
+    margin: 0;
+    padding: 12px; /* épaisseur du cadre */
+    background: #12734A;
+}
+
+.container{
+    background:  #fff;
+    min-height: calc(100vh - 24px);
+    border-radius: 25px;
+    overflow: hidden;
+}

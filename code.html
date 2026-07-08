@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#12734A;
+}
+
+.card{
+    background:white;
+    width:380px;
+    padding:35px 25px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.logo{
+    width:350px;
+    height:80px;
+    object-fit:contain;
+    margin-bottom:20px;
+}
+
+h2{
+    color:#12734A;
+    margin-bottom:10px;
+}
+
+p{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.dots{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.dot{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    border:2px solid #12734A;
+}
+
+.dot.active{
+    background:#12734A;
+}
+
+.keypad{
+    display:grid;
+    grid-template-columns:repeat(3,75px);
+    justify-content:center;
+    gap:15px;
+}
+
+button{
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    border:0;
+    background:#eee;
+    font-size:28px;
+}
+
+button:active{
+    transform:scale(.9);
+}
+
+.vide{
+    visibility:hidden;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="logo1.jpg" class="logo">
+
+<h2>Entrer le code</h2>
+
+<p>Code de démonstration à 6 chiffres</p>
+
+<div class="dots">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+
+
+<div class="keypad">
+
+<button class="key">1</button>
+<button class="key">2</button>
+<button class="key">3</button>
+
+<button class="key">4</button>
+<button class="key">5</button>
+<button class="key">6</button>
+
+<button class="key">7</button>
+<button class="key">8</button>
+<button class="key">9</button>
+
+<div class="vide"></div>
+
+<button class="key">0</button>
+
+<button id="delete">⌫</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+let code = "";
+
+const dots = document.querySelectorAll(".dot");
+
+
+function afficher(){
+    dots.forEach((dot,index)=>{
+        dot.classList.toggle("active", index < code.length);
+    });
+}
+
+
+document.querySelectorAll(".key").forEach(btn=>{
+
+    btn.onclick = ()=>{
+
+        if(code.length < 6){
+
+            code += btn.textContent;
+
+            afficher();
+
+            if(code.length === 6){
+
+                if(code === "222222"){
+
+                    window.location.href = "verification.html";
+
+                }else{
+
+                    alert("Code incorrect");
+                    code="";
+                    afficher();
+
+                }
+
+            }
+
+        }
+
+    };
+
+});
+
+
+document.getElementById("delete").onclick = ()=>{
+
+    code = code.slice(0,-1);
+    afficher();
+
+};
+
+</script>
+
+</body>
+</html>

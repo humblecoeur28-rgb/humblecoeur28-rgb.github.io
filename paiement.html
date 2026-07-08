@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiements</title>
+    <link rel="stylesheet" href="client.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="app">
+        <!-- En-tête vert -->
+        <header>
+            <h1>Paiements</h1>
+        </header>
+        
+        <!-- Contenu -->
+        <main>
+            <section class="title-row">
+                <h2>Vos paiements</h2>
+                <span>Cartes, virements et opérations</span>
+            </section>
+            
+            <!-- Mes cartes -->
+            <section class="title-row">
+                <h2>Mes cartes</h2>
+            </section>
+            
+            <div class="cards">
+                <div class="card" style="width:320px; height:200px; overflow:hidden; border-radius:12px;">
+                 <img src="visa.jpg" alt="Visa Premier" style="width:100%; border-radius:12px;">
+            </div>
+            <div class="card">
+                    <img src="mastercard.jpg" alt="Mastercard" style="width:100%; border-radius:12px;">
+                </div>
+            </div>
+            
+            <!-- Actions rapides -->
+            <section class="actions">
+                <button onclick="virement()">
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                    <span>Effectuer un virement</span>
+                </button>
+                <button>
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>Ajouter un bénéficiaire</span>
+                </button>
+                <button>
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span>Paiement mobile</span>
+                </button>
+                <button>
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span>Historique</span>
+                </button>
+            </section>
+            
+            <!-- Derniers paiements -->
+            <section class="synthese">
+                <h2>Derniers paiements</h2>
+                <div class="synthese-card">
+                    <img src="amazon.jpg" alt="Amazon" style="width:40px; height:40px; border-radius:8px;">
+                    <span>Amazon - 39,99 €</span>
+                </div>
+                <br>
+                <div class="synthese-card">
+                    <img src="sta.jpg" alt="Station Service" style="width:40px; height:40px; border-radius:8px;">
+                    <span>Station Service - 75,00 €</span>
+                </div>
+                <br>
+                <div class="synthese-card">
+                    <img src="rest.jpg" alt="Restaurant" style="width:40px; height:40px; border-radius:8px;">
+                    <span>Restaurant - 42,80 €</span>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Navigation -->
+        <nav>
+            <button onclick="window.location.href='client.html'">
+                <i class="fa-solid fa-house"></i>
+                <span>Accueil</span>
+            </button>
+            <button class="active">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Paiements</span>
+            </button>
+            <button onclick="window.location.href='decouvrir.html'">
+                <i class="fa-solid fa-compass"></i>
+                <span>Découvrir</span>
+            </button>
+            <button onclick="window.location.href='contact.html'">
+                <i class="fa-solid fa-comments"></i>
+                <span>Contact</span>
+            </button>
+        </nav>
+    </div>
+    
+    <script src="client.js"></script>
+</body>
+</html>

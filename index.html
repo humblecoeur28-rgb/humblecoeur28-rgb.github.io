@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="forgot-page">
+
+    <div class="main-container">
+        <img src="logo1.jpg" alt="Bannière" class="header-image">
+
+        <div class="login">
+            <h2>Connexion à votre espace</h2>
+
+            <label for="client">Numéro client</label>
+            <input id="client" type="text" placeholder="Numéro à 7 ou 10 chiffres">
+
+            <div class="remember">
+                <input type="checkbox" id="save">
+                <label for="save">Mémoriser mon numéro client</label>
+            </div>
+
+            <button type="button" onclick="verifierClient()">Continuer</button>
+
+            <p id="message" style="color:red; margin-top:10px;"></p>
+
+            <a href="oublie.html">Numéro client ou code secret oublié</a>
+        </div>
+
+        <div class="security">
+            <h3>🔒 Sécurité</h3>
+            <p>
+                Vérifiez toujours que vous utilisez votre espace sécurisé avant de saisir vos informations.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function verifierClient() {
+            let client = document.getElementById("client").value.trim();
+
+            if (client === "2222222") {
+                window.location.href = "code.html";
+            } else {
+                document.getElementById("message").textContent = "Numéro client incorrect.";
+            }
+        }
+    </script>
+
+</body>
+</html>
