@@ -3,258 +3,393 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Découvrir</title>
+    <title>Découvrir</title>
 
-<link rel="stylesheet" href="Decouvrir.css">
+    <link rel="stylesheet" href="decouvrir.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
-
 <body>
 
+<div class="forgot-page">
 
 <div class="app">
 
+    <!-- HEADER -->
 
-<header>
+    <header>
 
-<h2>Découvrir</h2>
+        <div class="header-top">
 
-<p>Découvrez tous nos services</p>
+            <h2>Découvrir</h2>
 
-</header>
+            <div class="header-icons">
 
+                <div class="notif" onclick="ouvrirNotifications()">
 
+                    <i class="fa-regular fa-bell"></i>
 
-<div class="banner">
+                    <span>3</span>
 
-<img src="Ima1.png" class="active">
+                </div>
 
-<img src="Ima.png">
+                <button onclick="ouvrirLogout()">
+                    <i class="fa-solid fa-power-off"></i>
+                </button>
 
-<img src="Ima2.png">
+            </div>
+
+        </div>
+
+        <div class="welcome">
+
+            <p>Découvrez nos services 🏦</p>
+
+            <span>Des solutions adaptées à vos besoins</span>
+
+        </div>
+
+    </header>
+
+    <!-- CONTENU -->
+
+    <main>
+
+        <!-- SLIDER -->
+
+        <section class="slider">
+
+            <div class="slides">
+
+                <img src="offre1.jpg" alt="Offre bancaire">
+
+                <img src="offre2.jpg" alt="Carte bancaire">
+
+                <img src="offre3.jpg" alt="Épargne">
+
+            </div>
+
+        </section>
+
+        <!-- TITRE -->
+
+        <section class="title-row">
+
+            <h2>Nos services</h2>
+
+        </section>
+
+        <!-- CARTES -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>Carte Premium</h3>
+
+                        <p>Paiements partout dans le monde</p>
+
+                    </div>
+
+                    <i class="fa-solid fa-credit-card"></i>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>Compte Épargne</h3>
+
+                        <p>Faites grandir votre argent</p>
+
+                    </div>
+
+                    <i class="fa-solid fa-piggy-bank"></i>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>Prêt Personnel</h3>
+
+                        <p>Financez vos projets</p>
+
+                    </div>
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+                <!-- OFFRES DU MOMENT -->
+
+        <section class="title-row">
+
+            <h2>Offres du moment</h2>
+
+        </section>
+
+        <section class="offres">
+
+            <div class="offre-card">
+
+                <i class="fa-solid fa-percent"></i>
+
+                <div>
+                    <h3>Prêt à taux réduit</h3>
+                    <p>Profitez d'un financement avantageux.</p>
+                </div>
+
+            </div>
+
+            <div class="offre-card">
+
+                <i class="fa-solid fa-gift"></i>
+
+                <div>
+                    <h3>Prime de bienvenue</h3>
+                    <p>Jusqu'à 150 € offerts à l'ouverture.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONSEILS -->
+
+        <section class="title-row">
+
+            <h2>Conseils</h2>
+
+        </section>
+
+        <section class="actions">
+
+            <button>
+
+                <i class="fa-solid fa-wallet"></i>
+
+                <span>Bien gérer votre budget</span>
+
+            </button>
+
+            <button>
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>Sécuriser vos paiements</span>
+
+            </button>
+
+            <button>
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>Faire fructifier votre épargne</span>
+
+            </button>
+
+            <button>
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <span>Découvrir tous nos services</span>
+
+            </button>
+
+        </section>
+
+        <!-- IMAGES QUI DEFILENT -->
+
+        <section class="title-row">
+
+            <h2>Nos partenaires</h2>
+
+        </section>
+
+        <div class="logo-slider">
+
+            <div class="logo-track">
+
+                <img src="logo1.png" alt="">
+                <img src="logo2.png" alt="">
+                <img src="logo3.png" alt="">
+                <img src="logo4.png" alt="">
+                <img src="logo5.png" alt="">
+
+                <img src="logo1.png" alt="">
+                <img src="logo2.png" alt="">
+                <img src="logo3.png" alt="">
+                <img src="logo4.png" alt="">
+                <img src="logo5.png" alt="">
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <button onclick="window.location.href='client.html'">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>Accueil</span>
+
+        </button>
+
+        <button onclick="window.location.href='paiement.html'">
+
+            <i class="fa-solid fa-credit-card"></i>
+
+            <span>Paiements</span>
+
+        </button>
+
+        <button class="active">
+
+            <i class="fa-solid fa-compass"></i>
+
+            <span>Découvrir</span>
+
+        </button>
+
+        <button onclick="window.location.href='contact.html'">
+
+            <i class="fa-solid fa-comments"></i>
+
+            <span>Contact</span>
+
+        </button>
+
+    </nav>
+
+</div>
+<!-- =========================
+     POPUP NOTIFICATIONS
+========================= -->
+
+<div id="notifModal" class="modal">
+
+    <div class="notif-box">
+
+        <div class="notif-title">
+
+            <h2>Découvrir</h2>
+
+            <button onclick="fermerNotifications()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div class="notification-item">
+
+            <i class="fa-solid fa-credit-card"></i>
+
+            <div>
+                <h3>Nouvelle carte Premium</h3>
+                <p>Découvrez tous ses avantages.</p>
+            </div>
+
+        </div>
+
+        <div class="notification-item">
+
+            <i class="fa-solid fa-piggy-bank"></i>
+
+            <div>
+                <h3>Épargne</h3>
+                <p>Des solutions pour faire grandir votre argent.</p>
+            </div>
+
+        </div>
+
+        <div class="notification-item">
+
+            <i class="fa-solid fa-building-columns"></i>
+
+            <div>
+                <h3>Prêt immobilier</h3>
+                <p>Financez votre futur logement.</p>
+            </div>
+
+        </div>
+
+        <div class="notification-item">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <div>
+                <h3>Sécurité</h3>
+                <p>Protégez votre compte avec nos conseils.</p>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
+<!-- =========================
+     POPUP DECONNEXION
+========================= -->
 
+<div id="logoutModal" class="modal">
 
+    <div class="logout-box">
 
-<main>
+        <img src="image.jpg"
+             alt="Photo profil"
+             class="profile-photo">
 
+        <h2>Richard Leblond</h2>
 
-<h2 class="title">
-Services populaires
-</h2>
+        <p>Voulez-vous vraiment vous déconnecter ?</p>
 
+        <div class="logout-buttons">
 
+            <button class="annuler" onclick="fermerLogout()">
+                Annuler
+            </button>
 
-<div class="card">
+            <button class="confirmer" onclick="confirmerLogout()">
+                Déconnexion
+            </button>
 
-<i class="fa-solid fa-money-bill-transfer"></i>
+        </div>
 
-<div>
-
-<h3>Transfert d'argent</h3>
-
-<p>
-Envoyez et recevez de l'argent rapidement partout.
-</p>
-
-</div>
-
-</div>
-
-
-
-
-<div class="card">
-
-<i class="fa-solid fa-credit-card"></i>
-
-<div>
-
-<h3>Carte bancaire</h3>
-
-<p>
-Commandez et gérez vos cartes facilement.
-</p>
+    </div>
 
 </div>
 
-</div>
-
-
-
-
-<div class="card">
-
-<i class="fa-solid fa-piggy-bank"></i>
-
-<div>
-
-<h3>Épargne</h3>
-
-<p>
-Préparez vos projets grâce à nos solutions d'épargne.
-</p>
-
-</div>
-
-</div>
-
-
-
-
-
-<h2 class="title">
-Offre du moment
-</h2>
-
-
-
-
-<div class="offer">
-
-
-<h3>
-🎁 Offre Exclusive BNP Paribas
-</h3>
-
-
-<p>
-Profitez d'avantages exclusifs sur vos paiements,
-vos virements et votre épargne directement depuis votre espace client.
-</p>
-
-
-<button>
-Découvrir
-</button>
-
-
-</div>
-
-
-
-
-
-<h2 class="title">
-Actualités
-</h2>
-
-
-
-
-<div class="news">
-
-
-<i class="fa-solid fa-bell"></i>
-
-
-<div>
-
-<h3>Nouvelles fonctionnalités</h3>
-
-<p>
-Découvrez les dernières améliorations de votre application.
-</p>
-
-</div>
-
-
-</div>
-
-
-
-
-<div class="news">
-
-
-<i class="fa-solid fa-shield-halved"></i>
-
-
-<div>
-
-<h3>Sécurité renforcée</h3>
-
-<p>
-Votre compte bénéficie désormais d'une protection encore plus efficace.
-</p>
-
-</div>
-
-
-</div>
-
-
-
-</main>
-
-
-
-
-
-<nav>
-
-
-<button onclick="location.href='client.html'">
-
-<i class="fa-solid fa-house"></i>
-
-<span>Accueil</span>
-
-</button>
-
-
-
-
-<button onclick="location.href='paiement.html'">
-
-<i class="fa-solid fa-credit-card"></i>
-
-<span>Paiements</span>
-
-</button>
-
-
-
-
-
-<button class="active">
-
-<i class="fa-solid fa-compass"></i>
-
-<span>Découvrir</span>
-
-</button>
-
-
-
-
-
-<button onclick="location.href='contact.html'">
-
-<i class="fa-solid fa-comments"></i>
-
-<span>Contact</span>
-
-</button>
-
-
-
-</nav>
-
-
-
-</div>
-
-
+<script src="decouvrir.js"></script>
 
 </body>
 
