@@ -1,0 +1,530 @@
+/* ===============================
+   BASE
+================================ */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+
+}
+
+
+body{
+
+    background:#12734A;
+    padding:12px;
+    overflow-x:hidden;
+
+}
+
+
+
+.forgot-page{
+
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+
+.app{
+
+    width:100%;
+    max-width:430px;
+    min-height:100vh;
+    background:#F4F6F8;
+    border-radius:25px;
+    overflow:hidden;
+
+}
+
+
+
+
+/* ===============================
+   HEADER
+================================ */
+
+
+header{
+
+    background:linear-gradient(180deg,#12B66A,#0B9E62);
+
+    color:white;
+
+    padding:35px 22px 45px;
+
+    border-bottom-left-radius:35px;
+    border-bottom-right-radius:35px;
+
+}
+
+
+
+.header-top{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+
+.header-top h2{
+
+    font-size:26px;
+
+}
+
+
+
+.header-icons{
+
+    display:flex;
+    gap:18px;
+
+}
+
+
+
+.header-icons button{
+
+    background:none;
+    border:none;
+    color:white;
+    font-size:22px;
+
+}
+
+
+
+.notif{
+
+    position:relative;
+    font-size:22px;
+
+}
+
+
+
+.notif span{
+
+    position:absolute;
+
+    top:-8px;
+    right:-10px;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:red;
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:10px;
+
+}
+
+
+
+
+.welcome{
+
+    margin-top:25px;
+
+}
+
+
+
+.welcome p{
+
+    font-size:22px;
+    font-weight:bold;
+
+}
+
+
+
+.welcome span{
+
+    opacity:.85;
+
+}
+
+
+
+/* ===============================
+   CHAT
+================================ */
+
+
+main{
+
+    padding:20px 22px 120px;
+
+}
+
+
+
+.chat-box{
+
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+/* ===============================
+   HEADER CHAT
+================================ */
+
+
+.chat-header{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:20px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+
+.chat-header > i{
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    background:#EAF8F1;
+
+    color:#0B9E62;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:22px;
+
+}
+
+
+
+.chat-header h3{
+
+    font-size:17px;
+
+}
+
+
+
+.chat-header p{
+
+    color:#0B9E62;
+
+    font-size:13px;
+
+}
+
+
+
+
+/* ===============================
+   MESSAGES
+================================ */
+
+
+.messages{
+
+    height:350px;
+
+    padding:20px;
+
+    overflow-y:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+
+.message{
+
+    max-width:80%;
+
+    padding:12px 16px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    line-height:1.4;
+
+}
+
+
+
+.message.banque{
+
+    background:#EAF8F1;
+
+    color:#222;
+
+    align-self:flex-start;
+
+    border-bottom-left-radius:5px;
+
+}
+
+
+
+.message.client{
+
+    background:#0B9E62;
+
+    color:white;
+
+    align-self:flex-end;
+
+    border-bottom-right-radius:5px;
+
+}
+
+
+
+
+
+/* ===============================
+   SUGGESTIONS
+================================ */
+
+
+.suggestions{
+
+    display:flex;
+
+    gap:10px;
+
+    padding:0 15px 15px;
+
+    overflow-x:auto;
+
+}
+
+
+
+.suggestions::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+
+
+.suggestions button{
+
+    background:#EAF8F1;
+
+    color:#0B9E62;
+
+    border:none;
+
+    padding:10px 15px;
+
+    border-radius:20px;
+
+    white-space:nowrap;
+
+    font-weight:bold;
+
+}
+
+/* ===============================
+   ZONE ECRITURE
+================================ */
+
+
+.input-zone{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px;
+
+    border-top:1px solid #eee;
+
+}
+
+
+
+.input-zone input{
+
+    flex:1;
+
+    height:45px;
+
+    border-radius:25px;
+
+    border:1px solid #ddd;
+
+    padding:0 18px;
+
+    outline:none;
+
+    font-size:14px;
+
+}
+
+
+
+.input-zone button{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#0B9E62;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+
+
+/* ===============================
+   NAVIGATION
+================================ */
+
+
+nav{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:100%;
+
+    max-width:430px;
+
+    background:white;
+
+    display:flex;
+
+    padding:12px 0;
+
+    box-shadow:0 -5px 15px rgba(0,0,0,.06);
+
+}
+
+
+
+nav button{
+
+    flex:1;
+
+    border:none;
+
+    background:none;
+
+    color:#888;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:5px;
+
+}
+
+
+
+nav .active{
+
+    color:#0B9E62;
+
+}
+
+
+
+/* ===============================
+   ANIMATION MESSAGES
+================================ */
+
+
+.message{
+
+    animation:apparition .3s ease;
+
+}
+
+
+
+@keyframes apparition{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
