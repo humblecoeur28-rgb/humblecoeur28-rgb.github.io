@@ -1,404 +1,575 @@
+.forgot-page{
+
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#12734A;
+    padding:20px;
+
+}
+
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+    font-family:'Inter',Arial,sans-serif;
 
+}
 
 body{
 
     background:#F4F6F8;
     color:#222;
     overflow-x:hidden;
-    padding-bottom:80px;
 
 }
-
 
 .app{
 
     width:100%;
     max-width:430px;
     min-height:100vh;
-    margin:auto;
-
+    background:#F4F6F8;
+    overflow:hidden;
 }
 
-
-
-/* ===============================
-HEADER
-================================ */
+/* ===========================
+   HEADER
+=========================== */
 
 header{
 
     background:linear-gradient(180deg,#12B66A,#0B9E62);
-
     color:white;
-
-    padding:30px 22px 40px;
-
-    text-align:center;
-
+    padding:35px 22px 45px;
     border-bottom-left-radius:35px;
-
     border-bottom-right-radius:35px;
 
 }
 
+.header-top{
 
-
-header h2{
-
-    font-size:28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
 }
 
+.header-icons{
 
+    display:flex;
+    gap:18px;
 
-header p{
+}
 
-    margin-top:8px;
+.header-icons button{
 
-    font-size:15px;
+    border:none;
+    background:none;
+    color:white;
+    font-size:22px;
+
+}
+
+.notif{
+
+    position:relative;
+    font-size:22px;
+    cursor:pointer;
+
+}
+
+.notif span{
+
+    position:absolute;
+    top:-8px;
+    right:-8px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:red;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:10px;
+    border:2px solid white;
+
+}
+
+.welcome{
+
+    margin-top:25px;
+
+}
+
+.welcome p{
+
+    font-size:22px;
+    font-weight:bold;
+
+}
+
+.welcome span{
 
     opacity:.9;
 
 }
 
-
-
-/* ===============================
-BANNIERE
-================================ */
-
-
-.banner{
-
-    margin:15px;
-
-    height:200px;
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    position:relative;
-
-    background:#ddd;
-
-    box-shadow:0 8px 18px rgba(0,0,0,.08);
-
-}
-
-
-
-.banner img{
-
-    width:100%;
-
-    height:100%;
-
-    position:absolute;
-
-    object-fit:cover;
-
-    opacity:0;
-
-    transition:.8s;
-
-}
-
-
-
-.banner img.active{
-
-    opacity:1;
-
-}
-
-
-
-/* ===============================
-CONTENU
-================================ */
-
+/* ===========================
+   MAIN
+=========================== */
 
 main{
 
-    padding:0 15px 100px;
+    padding:20px 22px 120px;
 
 }
 
+/* ===========================
+   SLIDER
+=========================== */
 
+.slider{
 
-.title{
+    width:100%;
+    height:180px;
+    overflow:hidden;
+    border-radius:25px;
+    background:white;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    margin-bottom:25px;
+
+}
+
+.slides{
+
+    display:flex;
+    width:300%;
+    height:100%;
+    transition:1s;
+
+}
+
+.slides img{
+
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    flex-shrink:0;
+
+}
+
+/* ===========================
+   TITRES
+=========================== */
+
+.title-row{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:25px 0 18px;
+
+}
+
+.title-row h2{
 
     font-size:22px;
-
-    margin:25px 0 15px;
+    color:#222;
 
 }
 
+/* ===========================
+   CARTES
+=========================== */
 
+.cards{
 
-/* ===============================
-CARTE SERVICE
-================================ */
+    display:flex;
+    gap:18px;
+    overflow-x:auto;
+    padding-bottom:10px;
+    scroll-behavior:smooth;
 
+}
+
+.cards::-webkit-scrollbar{
+
+    display:none;
+
+}
 
 .card{
 
+    min-width:290px;
     background:white;
-
     border-radius:24px;
-
-    padding:18px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    margin-bottom:15px;
-
+    padding:22px;
     border:1px solid #E8ECEF;
-
-    box-shadow:0 8px 18px rgba(0,0,0,.05);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.35s;
+    cursor:pointer;
 
 }
 
+.card:hover{
 
+    transform:translateY(-6px);
 
-.card i{
+}
 
-    width:48px;
-
-    height:48px;
-
-    border-radius:14px;
-
-    background:#EAF8F1;
-
-    color:#0B9E62;
+.card-header{
 
     display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:22px;
+    justify-content:space-between;
+    align-items:flex-start;
 
 }
 
+.card-header h3{
 
-
-.card h3{
-
-    font-size:17px;
+    font-size:19px;
+    margin-bottom:6px;
 
 }
 
-
-
-.card p{
-
-    margin-top:5px;
+.card-header p{
 
     color:#777;
-
     font-size:14px;
 
 }
 
+.card-header i{
 
-
-/* ===============================
-OFFRE
-================================ */
-
-
-.offer{
-
-    background:linear-gradient(180deg,#12B66A,#0B9E62);
-
-    color:white;
-
-    border-radius:24px;
-
-    padding:20px;
-
-}
-
-
-
-.offer h3{
-
-    font-size:18px;
-
-}
-
-
-
-.offer p{
-
-    margin-top:10px;
-
-    line-height:22px;
-
-}
-
-
-
-.offer button{
-
-    margin-top:15px;
-
-    padding:12px 25px;
-
-    border:none;
-
-    border-radius:25px;
-
-    background:white;
-
-    color:#0B9E62;
-
-    font-weight:bold;
-
-}
-
-
-
-/* ===============================
-ACTUALITES
-================================ */
-
-
-.news{
-
-    background:white;
-
-    border-radius:22px;
-
-    padding:18px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    margin-bottom:15px;
-
-}
-
-
-
-.news i{
-
-    width:45px;
-
-    height:45px;
-
-    border-radius:14px;
-
+    width:50px;
+    height:50px;
+    border-radius:15px;
     background:#EAF8F1;
-
     color:#0B9E62;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-    font-size:20px;
+    font-size:22px;
 
 }
 
+/* ===========================
+   OFFRES
+=========================== */
 
+.offres{
 
-/* ===============================
-NAVIGATION BAS
-================================ */
+    display:flex;
+    flex-direction:column;
+    gap:16px;
 
+}
+
+.offre-card{
+
+    background:white;
+    border-radius:22px;
+    padding:18px;
+    display:flex;
+    gap:15px;
+    align-items:center;
+    box-shadow:0 8px 18px rgba(0,0,0,.06);
+    transition:.3s;
+
+}
+
+.offre-card:hover{
+
+    transform:scale(1.02);
+
+}
+
+.offre-card i{
+
+    width:52px;
+    height:52px;
+    border-radius:15px;
+    background:#EAF8F1;
+    color:#0B9E62;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+
+}
+
+.offre-card p{
+
+    color:#777;
+    margin-top:5px;
+
+}
+
+/* ===========================
+   ACTIONS
+=========================== */
+
+.actions{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+
+}
+
+.actions button{
+
+    background:white;
+    border:1px solid #E8ECEF;
+    border-radius:22px;
+    padding:18px;
+    min-height:130px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    align-items:flex-start;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.actions button:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.actions i{
+
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:#EAF8F1;
+    color:#0B9E62;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+
+}
+
+.actions span{
+
+    font-weight:600;
+    text-align:left;
+
+}
+
+/* ===========================
+   LOGOS QUI DEFILENT
+=========================== */
+
+.logo-slider{
+
+    width:100%;
+    overflow:hidden;
+    margin:30px 0;
+
+}
+
+.logo-track{
+
+    display:flex;
+    gap:25px;
+    width:max-content;
+    animation:defilement 20s linear infinite;
+
+}
+
+.logo-track img{
+
+    width:70px;
+    height:70px;
+    object-fit:contain;
+    background:white;
+    padding:10px;
+    border-radius:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+@keyframes defilement{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+/* ===========================
+   NAVIGATION
+=========================== */
 
 nav{
 
     position:fixed;
-
     bottom:0;
-
     left:50%;
-
     transform:translateX(-50%);
-
-    max-width:430px;
-
     width:100%;
-
-    height:64px;
-
+    max-width:430px;
     background:white;
-
     display:flex;
-
-    padding:8px 0;
-
+    padding:12px 0;
     box-shadow:0 -5px 15px rgba(0,0,0,.06);
 
-    z-index:9999;
-
 }
-
-
 
 nav button{
 
     flex:1;
-
     border:none;
-
     background:none;
-
     color:#888;
-
     display:flex;
-
     flex-direction:column;
-
-    justify-content:center;
-
     align-items:center;
-
-    gap:3px;
-
-}
-
-
-
-nav button i{
-
-    font-size:20px;
+    gap:5px;
+    cursor:pointer;
 
 }
-
-
-
-nav button span{
-
-    font-size:11px;
-
-}
-
-
 
 nav .active{
 
     color:#0B9E62;
+
+}
+
+/* ===========================
+   POPUPS
+=========================== */
+
+.modal{
+
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+
+}
+
+.modal.show{
+
+    display:flex;
+
+}
+
+.notif-box,
+.logout-box{
+
+    width:90%;
+    max-width:380px;
+    background:white;
+    border-radius:25px;
+    padding:25px;
+
+}
+
+.notif-title{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+
+}
+
+.notif-title button{
+
+    border:none;
+    background:none;
+    font-size:22px;
+
+}
+
+.notification-item{
+
+    display:flex;
+    gap:15px;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+
+}
+
+.notification-item i{
+
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:#EAF8F1;
+    color:#0B9E62;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.profile-photo{
+
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #12B66A;
+    display:block;
+    margin:auto;
+
+}
+
+.logout-box{
+
+    text-align:center;
+
+}
+
+.logout-buttons{
+
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+
+}
+
+.logout-buttons button{
+
+    flex:1;
+    border:none;
+    padding:14px;
+    border-radius:15px;
+    font-weight:bold;
+    cursor:pointer;
+
+}
+
+.annuler{
+
+    background:#ddd;
+
+}
+
+.confirmer{
+
+    background:#E53935;
+    color:white;
 
 }
