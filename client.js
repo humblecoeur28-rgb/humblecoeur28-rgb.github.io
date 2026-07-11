@@ -134,15 +134,6 @@ function menu(page){
 let synthese = document.querySelector(".synthese-card");
 
 
-if(synthese){
-
-    synthese.addEventListener("click",()=>{
-
-        alert("Total de vos comptes");
-
-    });
-
-}
 
 
 
