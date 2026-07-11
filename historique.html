@@ -1535,8 +1535,56 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </nav>
 
 </div>
+<script>
 
-<script src="client.js"></script>
+let historiques = JSON.parse(
+    localStorage.getItem("historiques")
+) || [];
+
+
+let zone = document.getElementById("nouvellesOperations");
+
+
+historiques.forEach(h => {
+
+    zone.innerHTML += `
+
+    <div class="operation">
+
+        <div class="left">
+
+            <i class="fa-solid fa-money-bill-transfer"></i>
+
+            <div>
+
+                <h3>${h.type}</h3>
+
+                <p>${h.beneficiaire}</p>
+
+                <small>
+                ${h.date} à ${h.heure}
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="right">
+
+            <strong>
+            -${h.montant}
+            </strong>
+
+        </div>
+
+    </div>
+
+    `;
+
+});
+
+</script>
 
 </body>
 </html>
