@@ -10,77 +10,169 @@
 
 <style>
 
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f5f6f7;
+*{
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
+
+
+body{
+    margin:0;
+    background:#f5f6f7;
+    color:#222;
+}
+
+
 
 .header{
-background:#008542;
-color:white;
-padding:20px;
-font-size:20px;
-font-weight:bold;
+
+    height:65px;
+    background:#008542;
+    color:white;
+    display:flex;
+    align-items:center;
+    padding:0 20px;
+    font-size:20px;
+    font-weight:bold;
+
 }
+
+
+.back{
+
+    color:white;
+    text-decoration:none;
+    font-size:30px;
+    margin-right:15px;
+
+}
+
+
 
 .card{
-background:white;
-margin:20px;
-padding:20px;
-border-radius:18px;
-box-shadow:0 3px 10px #ddd;
+
+    background:white;
+    margin:20px;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0 3px 10px #ddd;
+
 }
+
+
+
+h2{
+
+    margin-top:0;
+
+}
+
+
 
 .detail{
-margin-bottom:15px;
+
+    margin-bottom:18px;
+
 }
+
+
 
 .label{
-color:#777;
-font-size:14px;
+
+    color:#777;
+    font-size:14px;
+
 }
 
+
+
 .value{
-font-weight:bold;
-font-size:16px;
+
+    font-size:16px;
+    font-weight:bold;
+    margin-top:5px;
+    word-break:break-all;
+
 }
+
 
 
 button{
 
-width:100%;
-padding:15px;
-border:0;
-border-radius:12px;
-background:#008542;
-color:white;
-font-size:16px;
-font-weight:bold;
+    width:100%;
+    padding:15px;
+    margin-top:20px;
+    border:none;
+    border-radius:12px;
+    background:#008542;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
 
 }
 
 
-/* notification */
+
+/* Notifications */
 
 .notification{
 
-position:fixed;
-top:-120px;
-left:20px;
-right:20px;
-background:white;
-border-radius:15px;
-padding:15px;
-box-shadow:0 5px 20px #aaa;
-transition:0.5s;
+    position:fixed;
+    top:-150px;
+    left:20px;
+    right:20px;
+    background:white;
+    padding:18px;
+    border-radius:18px;
+    box-shadow:0 5px 20px #aaa;
+    text-align:center;
+    transition:0.5s;
+    z-index:10;
+
 }
+
+
 
 .notification.show{
-top:20px;
+
+    top:20px;
+
 }
 
+
+
+/* Cercle chargement */
+
+
+.loader{
+
+    width:35px;
+    height:35px;
+    border:4px solid #ddd;
+    border-top:4px solid #008542;
+    border-radius:50%;
+    margin:auto;
+    animation:tourner 1s linear infinite;
+
+}
+
+
+
+@keyframes tourner{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
 </style>
+
 
 </head>
 
@@ -89,47 +181,54 @@ top:20px;
 
 
 <div class="header">
+
+<a href="virement.html" class="back">
+‹
+</a>
+
 Confirmation du virement
+
 </div>
 
 
 
 <div class="card">
 
-<h2>Détails du virement</h2>
 
+<h2>
+Détails du virement
+</h2>
 
-<div class="detail">
-<div class="label">
-Bénéficiaire
-</div>
-
-<div class="value" id="beneficiaire"></div>
-</div>
 
 
 <div class="detail">
-<div class="label">
-Montant
-</div>
 
-<div class="value">
-<span id="montant"></span> €
-</div>
-</div>
-
-
-<div class="detail">
 <div class="label">
 Compte débité
 </div>
 
 <div class="value" id="compte"></div>
+
 </div>
 
 
 
+
 <div class="detail">
+
+<div class="label">
+Bénéficiaire
+</div>
+
+<div class="value" id="beneficiaire"></div>
+
+</div>
+
+
+
+
+<div class="detail">
+
 <div class="label">
 IBAN
 </div>
@@ -140,80 +239,193 @@ IBAN
 
 
 
+
+<div class="detail">
+
+<div class="label">
+Montant
+</div>
+
+<div class="value">
+<span id="montant"></span> €
+</div>
+
+</div>
+
+
+
+
+<div class="detail">
+
+<div class="label">
+Motif
+</div>
+
+<div class="value" id="motif"></div>
+
+</div>
+
+
+
+
 <button onclick="confirmer()">
+
 Confirmer le virement
+
 </button>
 
 
+
 </div>
 
 
+
+
+<!-- Confirmation en cours -->
+
+<div class="notification" id="chargement">
+
+<div class="loader"></div>
+
+<br>
+
+Confirmation en cours...
+
+</div>
+
+
+
+
+<!-- Message succès -->
 
 <div class="notification" id="notification">
 
-<b>Virement effectué</b>
+<b>
+Virement effectué avec succès
+</b>
+
+<br><br>
+
+Votre virement vers 
+<b id="notifNom"></b>
+
+a été effectué.
 
 <br>
 
-Votre virement vers <span id="notifNom"></span>
-a été effectué avec succès.
-
-<br>
-
-Montant : <span id="notifMontant"></span> €
+Montant :
+<b id="notifMontant"></b> €
 
 </div>
+
 
 
 
 <script>
 
 
-let nom =
-localStorage.getItem("beneficiaire");
-
-let montant =
-localStorage.getItem("montant");
-
 let compte =
 localStorage.getItem("compte");
 
 
+let beneficiaire =
+localStorage.getItem("beneficiaire");
 
-document.getElementById("beneficiaire").innerHTML=nom;
 
-document.getElementById("montant").innerHTML=montant;
+let iban =
+localStorage.getItem("iban");
 
-document.getElementById("compte").innerHTML=
+
+let montant =
+localStorage.getItem("montant");
+
+
+let motif =
+localStorage.getItem("motif");
+
+
+
+document.getElementById("compte").innerHTML =
 compte==="cheque"
-?"Compte de chèques ••••1749"
-:"Compte joint ••••7890";
+? "Compte de chèques ••••1749"
+: "Compte joint ••••7890";
+
+
+document.getElementById("beneficiaire").innerHTML =
+beneficiaire;
+
+
+document.getElementById("iban").innerHTML =
+iban;
+
+
+document.getElementById("montant").innerHTML =
+montant;
+
+
+document.getElementById("motif").innerHTML =
+motif;
+
+
 
 
 
 function confirmer(){
 
 
+let chargement =
+document.getElementById("chargement");
+
+
+let notification =
+document.getElementById("notification");
+
+
+
+// étape chargement 4 secondes
+
+chargement.classList.add("show");
+
+
+
 setTimeout(function(){
 
 
-document.getElementById("notifNom").innerHTML=nom;
-
-document.getElementById("notifMontant").innerHTML=montant;
+chargement.classList.remove("show");
 
 
-document
-.getElementById("notification")
-.classList.add("show");
+// préparer message
+
+document.getElementById("notifNom").innerHTML =
+beneficiaire;
 
 
-},2000);
+document.getElementById("notifMontant").innerHTML =
+montant;
+
+
+
+notification.classList.add("show");
+
+
+
+// disparition après 4 secondes
+
+setTimeout(function(){
+
+notification.classList.remove("show");
+
+},4000);
+
+
+
+},4000);
+
 
 
 }
-let iban = localStorage.getItem("iban");
 
-document.getElementById("iban").innerHTML = iban;
+
 
 </script>
 
