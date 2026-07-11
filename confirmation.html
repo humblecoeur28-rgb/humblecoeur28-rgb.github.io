@@ -407,7 +407,30 @@ montant;
 
 notification.classList.add("show");
 
+let notifications = JSON.parse(localStorage.getItem("notifications")) || [];
 
+notifications.unshift({
+
+    titre: "Virement effectué",
+
+    message: "Votre virement vers " + beneficiaire + " a été effectué avec succès.",
+
+    montant: montant + " €",
+
+    date: new Date().toLocaleDateString("fr-FR"),
+
+    heure: new Date().toLocaleTimeString("fr-FR")
+
+});
+
+localStorage.setItem(
+
+    "notifications",
+
+    JSON.stringify(notifications)
+
+);
+    
 
 // disparition après 4 secondes
 
