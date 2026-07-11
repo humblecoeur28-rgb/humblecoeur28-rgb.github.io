@@ -235,3 +235,58 @@ function ouvrirContact() {
 function ouvrirHistorique() {
     window.location.href = "historique.html";
 }
+function chargerNotifications(){
+
+    let notifications = JSON.parse(localStorage.getItem("notifications")) || [];
+
+    let zone = document.getElementById("nouvellesNotifications");
+
+    let compteur = document.getElementById("notifCount");
+
+
+    if(compteur){
+
+        compteur.innerHTML = 7 + notifications.length;
+
+    }
+
+
+    if(zone){
+
+        zone.innerHTML = "";
+
+
+        notifications.forEach(n => {
+
+            zone.innerHTML += `
+
+            <div class="notification-item">
+
+                <i class="fa-solid fa-money-bill-transfer"></i>
+
+                <div>
+
+                    <h3>${n.titre}</h3>
+
+                    <p>${n.message}</p>
+
+                    <p>${n.montant}</p>
+
+                    <small>
+                    ${n.date} à ${n.heure}
+                    </small>
+
+                </div>
+
+            </div>
+
+            `;
+
+        });
+
+    }
+
+}
+
+
+chargerNotifications();
