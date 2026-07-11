@@ -41,6 +41,31 @@
 <script>
     // Redirection automatique après 3 secondes
     setTimeout(function () {
+        setTimeout(function () {
+
+    let notifications =
+    JSON.parse(localStorage.getItem("notifications")) || [];
+
+    notifications.unshift({
+
+        titre: "Connexion réussie",
+
+        message: "Vous vous êtes connecté à votre espace bancaire.",
+
+        date: new Date().toLocaleDateString("fr-FR"),
+
+        heure: new Date().toLocaleTimeString("fr-FR")
+
+    });
+
+    localStorage.setItem(
+        "notifications",
+        JSON.stringify(notifications)
+    );
+
+    window.location.href = "client.html";
+
+}, 3000);
         window.location.href = "client.html";
     }, 3000);
 </script>
