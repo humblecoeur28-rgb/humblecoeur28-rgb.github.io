@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Effectuer un virement</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+header{
+    background:#00884a;
+    color:#fff;
+    padding:50px 20px 25px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+header i{
+    font-size:22px;
+}
+
+header h1{
+    font-size:22px;
+}
+
+.container{
+    padding:20px;
+}
+
+.card{
+    background:#fff;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+label{
+    display:block;
+    margin-top:18px;
+    margin-bottom:8px;
+    color:#555;
+    font-weight:bold;
+}
+
+input,
+select{
+    width:100%;
+    height:55px;
+    border:1px solid #ddd;
+    border-radius:14px;
+    padding:0 15px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+input:focus,
+select:focus{
+    border-color:#00884a;
+    box-shadow:0 0 0 3px rgba(0,136,74,.15);
+}
+
+.btn{
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:14px;
+    background:#00884a;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    margin-top:30px;
+}
+
+.btn:active{
+    transform:scale(.98);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <i class="fa-solid fa-arrow-left"></i>
+    <h1>Effectuer un virement</h1>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<label>Compte à débiter</label>
+<select>
+    <option>Compte de chèques ••••1749</option>
+    <option>Compte joint ••••7890</option>
+</select>
+
+<label>Bénéficiaire</label>
+<input type="text" placeholder="Nom du bénéficiaire">
+
+<label>IBAN</label>
+<input type="text" placeholder="FR76 XXXX XXXX XXXX XXXX">
+
+<label>Montant</label>
+<input type="number" placeholder="0,00 €">
+
+<label>Motif</label>
+<input type="text" placeholder="Ex : Loyer">
+
+<button class="btn">
+Continuer
+</button>
+
+</div>
+
+</div>
+
+<script>
+document.querySelector(".fa-arrow-left").onclick = () => {
+    history.back();
+};
+
+document.querySelector(".btn").onclick = () => {
+    alert("Virement en préparation");
+};
+</script>
+
+</body>
+</html>
