@@ -7,103 +7,104 @@
 
 <title>Effectuer un virement</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
 
 *{
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-margin:0;
-background:#f5f6f7;
-color:#222;
+    margin:0;
+    background:#f5f6f7;
+    color:#222;
 }
 
 
-.header{
-height:65px;
-background:#008542;
-color:white;
-display:flex;
-align-items:center;
-padding:0 20px;
-font-size:20px;
-font-weight:bold;
+.topbar{
+    height:65px;
+    background:#008542;
+    color:white;
+    display:flex;
+    align-items:center;
+    padding:0 20px;
 }
 
 
-.back{
-font-size:30px;
-color:white;
-text-decoration:none;
-margin-right:20px;
+.topbar i{
+    font-size:22px;
+    margin-right:15px;
 }
 
 
-.container{
-padding:20px;
+.topbar h1{
+    font-size:20px;
+    margin:0;
 }
 
 
-.card{
-background:white;
-border-radius:18px;
-padding:20px;
-box-shadow:0 3px 10px #ddd;
-}
+.form-card{
 
+    background:white;
+    margin:20px;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0 3px 10px #ddd;
 
-h2{
-margin-top:0;
 }
 
 
 label{
-display:block;
-margin-top:18px;
-font-size:14px;
-color:#555;
-}
 
-
-input, select{
-
-width:100%;
-padding:14px;
-margin-top:8px;
-border-radius:12px;
-border:1px solid #ddd;
-font-size:16px;
+    display:block;
+    margin-top:18px;
+    margin-bottom:8px;
+    font-size:14px;
+    color:#555;
 
 }
 
 
-button{
+select,
+input{
 
-width:100%;
-padding:15px;
-margin-top:25px;
-border:none;
-border-radius:12px;
-background:#008542;
-color:white;
-font-size:16px;
-font-weight:bold;
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    font-size:16px;
 
 }
 
 
-.info{
+.btn{
 
-margin-top:15px;
-padding:12px;
-background:#f1f1f1;
-border-radius:12px;
-font-size:14px;
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#008542;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
 
 }
 
+
+.message{
+
+    display:none;
+    margin-top:15px;
+    padding:12px;
+    border-radius:10px;
+    background:#ffe5e5;
+    color:red;
+    font-weight:bold;
+
+}
 
 </style>
 
@@ -113,38 +114,34 @@ font-size:14px;
 <body>
 
 
-<div class="header">
+<header class="topbar">
 
-<a href="index.html" class="back">‹</a>
+<i class="fa-solid fa-arrow-left"></i>
 
+<h1>
 Effectuer un virement
+</h1>
 
-</div>
-
-
-
-<div class="container">
+</header>
 
 
-<div class="card">
 
-
-<h2>Nouveau virement</h2>
+<div class="form-card">
 
 
 <label>
-Depuis quel compte ?
+Compte à débiter
 </label>
 
 
-<select id="compte">
+<select id="compte" onchange="verifierCompte()">
 
 <option value="cheque">
-Compte de chèques
+Compte de chèques ••••1749
 </option>
 
-<option value="epargne">
-Compte épargne (bloqué)
+<option value="joint">
+Compte joint ••••7890
 </option>
 
 </select>
@@ -152,14 +149,20 @@ Compte épargne (bloqué)
 
 
 <label>
-Nom du bénéficiaire
+Bénéficiaire
 </label>
 
 
-<input 
-id="nom"
-type="text"
-placeholder="Nom du bénéficiaire">
+<input type="text" placeholder="Nom du bénéficiaire" id="beneficiaire">
+
+
+
+<label>
+IBAN
+</label>
+
+
+<input type="text" placeholder="FR76 XXXX XXXX XXXX">
 
 
 
@@ -169,29 +172,29 @@ Montant
 
 
 <input 
+type="number" 
+placeholder="0,00 €"
 id="montant"
-type="number"
-placeholder="Montant en €">
+oninput="verifierMontant()">
 
 
 
-<div class="info">
-
-Le montant maximum autorisé est de 25 €.
-
-</div>
+<label>
+Motif
+</label>
 
 
+<input type="text" placeholder="Ex : Loyer">
 
-<button onclick="continuerVirement()">
 
+
+<div class="message" id="message"></div>
+
+
+
+<button class="btn">
 Continuer
-
 </button>
-
-
-
-</div>
 
 
 </div>
@@ -202,36 +205,63 @@ Continuer
 <script>
 
 
-function continuerVirement(){
+function verifierCompte(){
+
+let compte=document.getElementById("compte").value;
+
+let message=document.getElementById("message");
 
 
-let compte =
-document.getElementById("compte").value;
+if(compte==="joint"){
 
+message.style.display="block";
 
-let nom =
-document.getElementById("nom").value;
-
-
-let montant =
-document.getElementById("montant").value;
-
-
-
-localStorage.setItem("compteVirement", compte);
-
-localStorage.setItem("nomBeneficiaire", nom);
-
-localStorage.setItem("montantVirement", montant);
-
-
-
-window.location.href =
-"confirmation-virement.html";
-
+message.innerHTML=
+"Votre compte joint est bloqué, veuillez contacter le service";
 
 }
 
+else{
+
+message.style.display="none";
+
+message.innerHTML="";
+
+}
+
+}
+
+
+
+function verifierMontant(){
+
+let compte=document.getElementById("compte").value;
+
+let montant=Number(document.getElementById("montant").value);
+
+let message=document.getElementById("message");
+
+
+
+if(compte==="cheque" && montant > 25){
+
+message.style.display="block";
+
+message.innerHTML=
+"Fonds insuffisants";
+
+}
+
+else if(compte==="cheque"){
+
+message.style.display="none";
+
+message.innerHTML="";
+
+}
+
+
+}
 
 
 </script>
