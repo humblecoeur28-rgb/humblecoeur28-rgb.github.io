@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gérer les plafonds</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    margin:0;
+    background:#f5f6f7;
+    color:#222;
+}
+
+.header{
+    background:#008542;
+    color:white;
+    height:65px;
+    display:flex;
+    align-items:center;
+    padding:0 20px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.back{
+    margin-right:20px;
+    font-size:28px;
+}
+
+.container{
+    padding:20px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:18px;
+    box-shadow:0 3px 10px #ddd;
+}
+
+.bank-card{
+    height:170px;
+    border-radius:20px;
+    background:linear-gradient(135deg,#006b3c,#00a65a);
+    color:white;
+    padding:25px;
+}
+
+.chip{
+    width:45px;
+    height:32px;
+    background:#ddd;
+    border-radius:6px;
+}
+
+.number{
+    margin-top:35px;
+    font-size:20px;
+    letter-spacing:3px;
+}
+
+.title{
+    font-size:17px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.amount{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.bar{
+    height:8px;
+    background:#ddd;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.progress{
+    height:8px;
+    width:65%;
+    background:#008542;
+    border-radius:10px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:12px;
+    background:#008542;
+    color:white;
+    font-size:16px;
+    margin-top:10px;
+}
+
+small{
+    color:#777;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <div class="back">‹</div>
+    Gérer les plafonds
+</div>
+
+
+<div class="container">
+
+<div class="card bank-card">
+
+<div class="chip"></div>
+
+<div class="number">
+**** **** **** 4521
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="title">
+Plafond de paiement
+</div>
+
+<div class="amount">
+3 000 € / mois
+</div>
+
+<small>
+Utilisé : 1 950 €
+</small>
+
+<div class="bar">
+<div class="progress"></div>
+</div>
+
+<button>
+Modifier le plafond
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="title">
+Plafond de retrait
+</div>
+
+<div class="amount">
+1 000 € / semaine
+</div>
+
+<small>
+Utilisé : 350 €
+</small>
+
+<div class="bar">
+<div class="progress" style="width:35%"></div>
+</div>
+
+<button>
+Modifier le plafond
+</button>
+
+</div>
+
+
+</div>
+
+</body>
+</html>
