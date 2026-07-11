@@ -41,9 +41,8 @@
 <script>
     // Redirection automatique après 3 secondes
     setTimeout(function () {
-        setTimeout(function () {
+        let notifications =
 
-    let notifications =
     JSON.parse(localStorage.getItem("notifications")) || [];
 
     notifications.unshift({
@@ -59,13 +58,19 @@
     });
 
     localStorage.setItem(
+
         "notifications",
+
         JSON.stringify(notifications)
+
     );
 
     window.location.href = "client.html";
 
 }, 3000);
+    
+
+    
         window.location.href = "client.html";
     }, 3000);
 </script>
