@@ -262,6 +262,25 @@ message.innerHTML="";
 
 
 }
+    
+
+
+function continuerVirement(){
+
+localStorage.setItem("compte",
+document.getElementById("compte").value);
+
+localStorage.setItem("beneficiaire",
+document.getElementById("beneficiaire").value);
+
+localStorage.setItem("montant",
+document.getElementById("montant").value);
+
+
+window.location.href="confirmation.html";
+
+}
+
 
 
 </script>
